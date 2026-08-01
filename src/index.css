@@ -1,16 +1,165 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ec4899;
-  --color-primary-dark: #be185d;
-  --color-secondary: #f43f5e;
+  --color-on-surface-variant: #dfbec8;
+  --color-secondary-fixed-dim: #eab2ff;
+  --color-surface-container: #211e2b;
+  --color-on-secondary-fixed-variant: #7400a0;
+  --color-primary: #ffb0cc;
+  --color-tertiary: #f0b6cf;
+  --color-primary-container: #ff4fa2;
+  --color-surface-container-lowest: #0f0c18;
+  --color-tertiary-fixed: #ffd8e7;
+  --color-on-background: #e7dff2;
+  --color-surface-dim: #15121e;
+  --color-surface-bright: #3b3745;
+  --color-inverse-surface: #e7dff2;
+  --color-secondary: #eab2ff;
+  --color-on-surface: #e7dff2;
+  --color-primary-fixed-dim: #ffb0cc;
+  --color-surface-tint: #ffb0cc;
+  --color-on-primary: #640038;
+  --color-on-tertiary: #4a2437;
+  --color-surface-container-high: #2c2835;
+  --color-outline: #a78992;
+  --color-on-primary-container: #5d0033;
+  --color-tertiary-container: #b9859c;
+  --color-primary-fixed: #ffd9e4;
+  --color-on-tertiary-container: #462033;
+  --color-tertiary-fixed-dim: #f0b6cf;
+  --color-on-primary-fixed-variant: #8d0051;
+  --color-on-error: #690005;
+  --color-outline-variant: #584048;
+  --color-on-secondary-fixed: #320047;
+  --color-on-secondary: #510072;
+  --color-surface-variant: #373340;
+  --color-surface-container-low: #1d1a26;
+  --color-on-tertiary-fixed-variant: #643a4e;
+  --color-error: #ffb4ab;
+  --color-on-tertiary-fixed: #320f22;
+  --color-inverse-on-surface: #322e3c;
+  --color-on-primary-fixed: #3e0020;
+  --color-error-container: #93000a;
+  --color-on-secondary-container: #e5a3ff;
+  --color-secondary-container: #7b00aa;
+  --color-surface: #15121e;
+  --color-on-error-container: #ffdad6;
+  --color-inverse-primary: #b7056b;
+  --color-surface-container-highest: #373340;
+  --color-background: #15121e;
+  --color-secondary-fixed: #f7d8ff;
+
+  --spacing-margin-desktop: auto;
+  --spacing-margin-mobile: 20px;
+  --spacing-container-padding: 24px;
+  --spacing-gutter: 16px;
+  --spacing-unit: 8px;
+  
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-body-md: "DM Sans", sans-serif;
+  --font-title-lg: "DM Sans", sans-serif;
+  --font-headline-lg: "DM Sans", sans-serif;
+  --font-label-lg: "DM Sans", sans-serif;
+  --font-display-md: "DM Sans", sans-serif;
+  --font-display-lg: "DM Sans", sans-serif;
+  --font-body-lg: "DM Sans", sans-serif;
 }
 
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer utilities {
+  .text-title-lg {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+  .text-headline-lg {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+  .text-label-lg {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+  .text-body-md {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .text-display-md {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+  .text-display-lg {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-headline-lg-mobile {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+  }
+  .text-body-lg {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .romantic-glow {
+    background: linear-gradient(135deg, var(--color-primary-container), var(--color-secondary-container));
+    box-shadow: 0 10px 40px -10px rgba(255, 79, 162, 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  body {
+    background-color: #15121e;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(123, 0, 170, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 85% 30%, rgba(255, 79, 162, 0.15) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: #e7dff2;
+  }
 }

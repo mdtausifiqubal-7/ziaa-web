@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ziaa - Our Private World</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#dfbec8",
+                    "secondary-fixed-dim": "#eab2ff",
+                    "surface-container": "#211e2b",
+                    "on-secondary-fixed-variant": "#7400a0",
+                    "primary": "#ffb0cc",
+                    "tertiary": "#f0b6cf",
+                    "primary-container": "#ff4fa2",
+                    "surface-container-lowest": "#0f0c18",
+                    "tertiary-fixed": "#ffd8e7",
+                    "on-background": "#e7dff2",
+                    "surface-dim": "#15121e",
+                    "surface-bright": "#3b3745",
+                    "inverse-surface": "#e7dff2",
+                    "secondary": "#eab2ff",
+                    "on-surface": "#e7dff2",
+                    "primary-fixed-dim": "#ffb0cc",
+                    "surface-tint": "#ffb0cc",
+                    "on-primary": "#640038",
+                    "on-tertiary": "#4a2437",
+                    "surface-container-high": "#2c2835",
+                    "outline": "#a78992",
+                    "on-primary-container": "#5d0033",
+                    "tertiary-container": "#b9859c",
+                    "primary-fixed": "#ffd9e4",
+                    "on-tertiary-container": "#462033",
+                    "tertiary-fixed-dim": "#f0b6cf",
+                    "on-primary-fixed-variant": "#8d0051",
+                    "on-error": "#690005",
+                    "outline-variant": "#584048",
+                    "on-secondary-fixed": "#320047",
+                    "on-secondary": "#510072",
+                    "surface-variant": "#373340",
+                    "surface-container-low": "#1d1a26",
+                    "on-tertiary-fixed-variant": "#643a4e",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#320f22",
+                    "inverse-on-surface": "#322e3c",
+                    "on-primary-fixed": "#3e0020",
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#e5a3ff",
+                    "secondary-container": "#7b00aa",
+                    "surface": "#15121e",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#b7056b",
+                    "surface-container-highest": "#373340",
+                    "background": "#15121e",
+                    "secondary-fixed": "#f7d8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "auto",
+                    "margin-mobile": "20px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "title-lg": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "headline-lg": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "label-lg": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "body-md": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "display-md": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "display-lg": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "headline-lg-mobile": [
+                            "DM Sans", "sans-serif"
+                    ],
+                    "body-lg": [
+                            "DM Sans", "sans-serif"
+                    ]
+            },
+            "fontSize": {
+                    "title-lg": [
+                            "22px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-lg": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-md": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .romantic-glow {
+            background: linear-gradient(135deg, var(--tw-colors-primary-container), var(--tw-colors-secondary-container));
+            box-shadow: 0 10px 40px -10px rgba(255, 79, 162, 0.5);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+            animation: float 6s ease-in-out 2s infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        body {
+            background-color: #15121e;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(123, 0, 170, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(255, 79, 162, 0.15) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: #e7dff2;
+        }
+        
+        /* Fallback elements for animations */
+        threejs-scene { display: block; }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/10 dark:bg-surface/10 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-primary/20 ease-out duration-300">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-container-padding flex justify-between items-center h-20 w-full">
+<a class="flex items-center gap-2 group" href="#">
+<img alt="Ziaa Logo" class="w-10 h-10 rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApweFGSFG79VnipOCn8nN46V9X__vW6DsYcLQmvm6yZCYCM39pqfYxGXQDM6A8bf1AgVBcQTkwqgtyq7zWgbCbFVJrs-AbMIRk9UH6obuH5gnTfF_YnnmmZdfeIAzwevRLlnFC8mqV26uuMXXKspjjgEY9VoUSypE3svaGO8kQt9rneSDErU9dsZM4oplsE0Yqh3ivgBlNhb02p84DHxkP3BD0nrmc_hRyt81qcYQxIwgrItPR-5bVMQ"/>
+<span class="font-display-md text-display-md font-bold text-primary">Ziaa</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#home">Home</a>
+<a class="text-on-surface/70 hover:text-primary transition-colors" href="#features">Features</a>
+<a class="text-on-surface/70 hover:text-primary transition-colors" href="#screenshots">Screenshots</a>
+<a class="text-on-surface/70 hover:text-primary transition-colors" href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full glass-card hover:opacity-80 transition-opacity text-on-surface">
+<span class="material-symbols-outlined">contrast</span>
+</button>
+<a class="px-6 py-2 rounded-full romantic-glow text-white font-label-lg text-label-lg hover:opacity-90 transition-opacity" href="#download">
+                    Download
+                </a>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden" id="home">
+<div class="absolute inset-0 z-0 opacity-40">
+<!-- STITCH_THREEJS_START:ANIMATION_1 class="w-full h-full object-cover" -->
+<div class="w-full h-full object-cover" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_1" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_1');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Create a glowing, romantic heart-shaped cluster of particles
+const particlesCount = 1500;
+const positions = new Float32Array(particlesCount * 3);
+const colors = new Float32Array(particlesCount * 3);
+
+const color1 = new THREE.Color('#FF4FA2');
+const color2 = new THREE.Color('#D16BFF');
+
+for (let i = 0; i < particlesCount; i++) {
+    // Heart shape formula
+    const t = Math.random() * Math.PI * 2;
+    const r = Math.random();
+    
+    // Parametric heart equation
+    const x = 16 * Math.pow(Math.sin(t), 3);
+    const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+    
+    positions[i * 3] = x * r * 0.5;
+    positions[i * 3 + 1] = y * r * 0.5;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 5;
+
+    const mixedColor = color1.clone().lerp(color2, Math.random());
+    colors[i * 3] = mixedColor.r;
+    colors[i * 3 + 1] = mixedColor.g;
+    colors[i * 3 + 2] = mixedColor.b;
+}
+
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+const material = new THREE.PointsMaterial({
+    size: 0.15,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending
+});
+
+const points = new THREE.Points(geometry, material);
+scene.add(points);
+
+camera.position.z = 25;
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    points.rotation.y += 0.002;
+    points.rotation.z += 0.001;
+    
+    // Pulse effect
+    const time = Date.now() * 0.001;
+    points.scale.setScalar(1 + Math.sin(time) * 0.05);
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_1 -->
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-margin-mobile md:px-container-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card mb-6 animate-fade-in-up">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-lg text-label-lg text-primary">Our Private World</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-[72px] text-white mb-6 animate-fade-in-up delay-100">
+                        Your Private World <span class="text-primary">Together</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200">
+                        Chat, Call, Share Memories, Celebrate Every Moment — all in one beautifully designed app, secured just for the two of you.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up delay-300">
+<a class="w-full sm:w-auto px-8 py-4 rounded-xl romantic-glow text-white font-title-lg text-title-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform" href="#download">
+<span class="material-symbols-outlined">android</span>
+                            Download APK
+                        </a>
+<a class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-on-surface font-title-lg text-title-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-colors" href="#features">
+                            Explore Features
+                        </a>
+</div>
+</div>
+<div class="relative h-[600px] hidden lg:block animate-fade-in-up delay-300">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[300px] h-[600px] rounded-[3rem] border-8 border-surface-container-high bg-surface-container overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover" data-alt="A highly detailed close-up of a modern, bezel-less smartphone screen displaying a beautiful, minimalist chat interface with soft pink and purple glassmorphic message bubbles on a deep midnight blue background. The UI feels intimate, premium, and romantic, with a soft depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcyDOzJxbtFlT46kLi5zMjyu_8j4R9plCvE7LrX8VIuwUgdtf7fy-7IPZzp02g7B81h6uq7e07H3uqRzMS_6LC8qgFoDaTQW0q4gYmwcNWT3G-sAeFgQxHWZPoQve2nUP9ORQOsXZRB2csXiW6uonHhY_MR82jwHPC8FYNo-nww33JyWsxAKJMPowrAWZ-ubFRiQKENmcQVDPuEyzQRdBPdVHUw5PvtXYyozavS0Yh9D5ghlickXSQqQ"/>
+</div>
+<!-- Floating Element 1 -->
+<div class="absolute -left-12 top-20 glass-card p-4 rounded-2xl animate-float z-20 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Anniversary</p>
+<p class="font-title-lg text-title-lg text-white">12 Days</p>
+</div>
+</div>
+<!-- Floating Element 2 -->
+<div class="absolute -right-8 bottom-32 glass-card p-4 rounded-2xl animate-float-delayed z-20">
+<p class="font-body-md text-body-md text-on-surface">"I love you! 💖"</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 relative" id="features">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-container-padding relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-display-md text-display-md text-white mb-4">Everything You Need</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Thoughtfully crafted features designed specifically for couples to stay connected.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Feature Cards -->
+<div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">chat</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-white mb-2">Real-time Chat</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Instant messaging with read receipts and typing indicators.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-2xl">photo_library</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-white mb-2">Shared Memories</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A private gallery for all your photos and videos.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary text-2xl">timer</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-white mb-2">Relationship Counter</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Track exactly how long you've been together.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+<div class="w-12 h-12 rounded-xl bg-error-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-error text-2xl">event</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-white mb-2">Special Dates</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Never miss an anniversary or birthday again.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Download Section -->
+<section class="py-24 relative" id="download">
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-container-padding text-center">
+<div class="glass-card rounded-[3rem] p-12 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+<div class="relative z-10">
+<h2 class="font-display-md text-display-md text-white mb-4">Start Your Journey Today</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Download Ziaa and create your private world.</p>
+<div class="flex flex-col items-center gap-4">
+<a class="px-10 py-5 rounded-2xl romantic-glow text-white font-title-lg text-title-lg font-bold flex items-center gap-3 hover:scale-105 transition-transform" href="#">
+<span class="material-symbols-outlined text-3xl">download</span>
+                                 Download Ziaa
+                             </a>
+<p class="font-label-lg text-label-lg text-on-surface-variant/70">Version 1.0 • 45MB • Requires Android 8.0+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest py-12 border-t border-white/5 ease-in-out duration-200">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-container-padding flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">Ziaa</span>
+</div>
+<p class="font-label-lg text-label-lg text-tertiary">
+                © 2024 Ziaa. Crafted by Ayan.
+            </p>
+<div class="flex items-center gap-6">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>
